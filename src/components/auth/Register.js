@@ -23,6 +23,7 @@ const Register = () => {
       alert('success');
     }
   };
+
   return (
     <div className="form-container">
       <h1>
