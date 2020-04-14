@@ -43,7 +43,7 @@ export default (state, action) => {
     case CLEAR_NOTES:
       return {
         ...state,
-        notes: null,
+        notes: [],
         filtered: null,
         error: null,
         current: null,

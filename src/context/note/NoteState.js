@@ -32,7 +32,6 @@ const NoteState = (props) => {
   const getNotes = async () => {
     try {
       const res = await axios.get(`${apiURL}/notes`);
-
       dispatch({
         type: GET_NOTES,
         payload: res.data,
