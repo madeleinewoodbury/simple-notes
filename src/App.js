@@ -12,13 +12,15 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/notes" component={Notes} />
-        <Route component={NotFound} />
-      </Switch>
+      <div className="container">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/notes" component={Notes} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
     </Router>
   );
 };
