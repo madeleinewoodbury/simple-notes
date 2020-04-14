@@ -1,4 +1,5 @@
 import React from 'react';
+import AuthState from './context/auth/AuthState';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Home from './components/layout/Home';
@@ -10,18 +11,20 @@ import './App.css';
 
 const App = () => {
   return (
-    <Router>
-      <Navbar />
-      <div className="container">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/notes" component={Notes} />
-          <Route component={NotFound} />
-        </Switch>
-      </div>
-    </Router>
+    <AuthState>
+      <Router>
+        <Navbar />
+        <div className="container">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/notes" component={Notes} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+      </Router>
+    </AuthState>
   );
 };
 
