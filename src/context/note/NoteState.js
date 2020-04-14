@@ -23,6 +23,7 @@ const NoteState = (props) => {
     current: null,
     filtered: null,
     error: null,
+    loading: true,
   };
 
   const [state, dispatch] = useReducer(NoteReducer, initialState);

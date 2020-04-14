@@ -8,12 +8,9 @@ const Notes = () => {
 
   useEffect(() => {
     getNotes();
-    // eslint-disable-next-line
-  }, []);
 
-  if (notes !== null && notes.length === 0 && !loading) {
-    return <h4>Please add a note</h4>;
-  }
+    // eslint-disable-next-line
+  }, [loading]);
 
   return (
     <Fragment>
@@ -24,7 +21,7 @@ const Notes = () => {
             : notes.map((note) => <NotesItem key={note._id} note={note} />)}
         </Fragment>
       ) : (
-        <p>Loading...</p>
+        <p>Please add a note</p>
       )}
     </Fragment>
   );

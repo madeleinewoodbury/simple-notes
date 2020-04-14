@@ -1,11 +1,14 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
+import NoteContext from '../../context/note/noteContext';
 
 const Navbar = () => {
   const authContext = useContext(AuthContext);
+  const noteContext = useContext(NoteContext);
 
   const { isAuthenticated, logout, user, loadUser } = authContext;
+  const { clearNotes } = noteContext;
 
   useEffect(() => {
     loadUser();
@@ -14,11 +17,12 @@ const Navbar = () => {
 
   const onLogout = () => {
     logout();
+    clearNotes();
   };
 
   const authLinks = (
     <Fragment>
-      <li style={{ marginRight: '10px' }}>
+      <li style={{ marginRight: '10px', fontSize: '1.3rem' }}>
         Hello {user && user.name.split(' ')[0]}
       </li>
       <li>
