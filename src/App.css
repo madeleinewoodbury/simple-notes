@@ -6,6 +6,7 @@
   --secondary-color: #f76b8a;
   --dark-color: #333333;
   --light-color: #fcfefe;
+  --semi-dark-color: #adadad;
   --danger-color: #f76b8a;
   --success-color: #28a745;
 }
@@ -279,6 +280,14 @@ img {
   background: #fff;
   color: #333;
   border: #ccc solid 1px;
+}
+
+.btn-semi-dark,
+.bg-semi-dark,
+.badge-semi-dark,
+.alert--semi-dark {
+  background: var(--semi-dark-color);
+  color: white;
 }
 
 .btn:hover {

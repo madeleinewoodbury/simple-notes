@@ -53,7 +53,7 @@ const NoteState = (props) => {
     };
 
     try {
-      const res = await axios.post(`${apiURL}/contacts`, formData, config);
+      const res = await axios.post(`${apiURL}/notes`, formData, config);
 
       dispatch({
         type: ADD_NOTE,
@@ -68,7 +68,7 @@ const NoteState = (props) => {
   };
 
   // Update Note
-  const updateNote = async (id, formData) => {
+  const updateNote = async (note) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const NoteState = (props) => {
     };
 
     try {
-      const res = await axios.put(`${apiURL}/notes/${id}`, formData, config);
+      const res = await axios.put(`${apiURL}/notes/${note._id}`, note, config);
 
       dispatch({
         type: UPDATE_NOTE,

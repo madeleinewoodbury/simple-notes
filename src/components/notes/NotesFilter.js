@@ -1,14 +1,32 @@
-import React, { useState } from 'react';
+import React, { useRef, useEffect, useContext } from 'react';
+import NoteContext from '../../context/note/noteContext';
 
 const NotesFilter = () => {
-  const [text, setText] = useState('');
+  const noteContext = useContext(NoteContext);
+  const text = useRef('');
+  const { filterNotes, clearFilter, filtered } = noteContext;
+
+  useEffect(() => {
+    if (filtered === null) {
+      text.current.value = '';
+    }
+  });
+
+  const onChange = (e) => {
+    if (text.current.value !== '') {
+      filterNotes(e.target.value);
+    } else {
+      clearFilter();
+    }
+  };
+
   return (
     <form className="my-1">
       <input
-        value={text}
+        ref={text}
         type="text"
         placeholder="Filter Notes..."
-        onChange={(e) => setText(e.value)}
+        onChange={onChange}
       />
     </form>
   );

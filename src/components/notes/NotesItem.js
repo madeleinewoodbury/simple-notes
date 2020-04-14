@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import NoteContext from '../../context/note/noteContext';
 
 const NotesItem = ({ note }) => {
+  const noteContext = useContext(NoteContext);
+  const { deleteNote, setCurrent, clearCurrent } = noteContext;
+
+  const { _id, title, text } = note;
+
   const onEdit = () => {
-    alert('edit');
+    setCurrent(note);
   };
 
   const onDelete = () => {
-    alert('delete');
+    deleteNote(_id);
+    clearCurrent();
   };
-
-  const { _id, title, text } = note;
 
   return (
     <div className="card bg-light">

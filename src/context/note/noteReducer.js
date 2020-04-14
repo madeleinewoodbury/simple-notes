@@ -30,7 +30,7 @@ export default (state, action) => {
       return {
         ...state,
         notes: state.notes.map((note) =>
-          note.id === payload.id ? payload : note
+          note._id === payload._id ? payload : note
         ),
         loading: false,
       };
