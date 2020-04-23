@@ -4,4 +4,4 @@
 
 ## [View Site](https://sharp-clarke-2b9a68.netlify.com/)
 
-###[simple-nots-API](https://github.com/madeleinewoodbury/simple-notes-api)
+### [simple-nots-API](https://github.com/madeleinewoodbury/simple-notes-api)
